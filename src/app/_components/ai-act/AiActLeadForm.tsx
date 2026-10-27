@@ -11,6 +11,7 @@ import { aiActContent } from "@/app/_content/ai-act";
 import { useLocale } from "@/lib/i18n/useLocale";
 import { saveLead } from "@/lib/ai-act/api";
 import { trackEvent } from "@/lib/analytics/ga";
+import { PrivacyNotice } from "@/components/consent/PrivacyNotice";
 
 interface AiActLeadFormProps {
     scanId: string | null;
@@ -178,6 +179,7 @@ export function AiActLeadForm({ scanId, resultId }: AiActLeadFormProps) {
                     />
                     <span>{content.consentText}</span>
                 </label>
+                <PrivacyNotice content={content.privacyNotice} />
 
                 <button
                     type="submit"

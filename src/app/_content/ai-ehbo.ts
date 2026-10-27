@@ -71,6 +71,11 @@ const en = {
         emptyTitle: "Describe your AI problem.",
         emptyDescription: "Any language, any level of detail. We'll figure it out together.",
         placeholder: "What's going on with AI in your organisation?",
+        privacyNotice: {
+            message:
+                "What you type here is stored so we can send you the result. Don't share confidential business information or other people's data.",
+            privacyLabel: "Privacy statement",
+        },
         send: "Send",
         errorMessage: "Something went wrong. Please try again, or reach out directly at info@theonlyconstant.nl.",
         back: "Back",
@@ -91,6 +96,10 @@ const en = {
             success: "Your plan of action has been sent. Good luck the coming days, and let us know if you have any questions.",
             error: "Something went wrong. Try again or email info@theonlyconstant.nl directly.",
             dismiss: "Dismiss",
+            privacyNotice: {
+                message: "We handle your details with care. See our",
+                privacyLabel: "privacy statement",
+            },
         },
     },
 };
@@ -153,6 +162,11 @@ const nl: typeof en = {
         emptyTitle: "Beschrijf je AI-probleem.",
         emptyDescription: "Elke taal, elk detailniveau. We komen er samen uit.",
         placeholder: "Wat speelt er met AI in je organisatie?",
+        privacyNotice: {
+            message:
+                "Wat je hier typt slaan we op om je het resultaat te kunnen sturen. Deel geen vertrouwelijke bedrijfsinformatie of gegevens van anderen.",
+            privacyLabel: "Privacyverklaring",
+        },
         send: "Verstuur",
         errorMessage: "Er ging iets mis. Probeer het opnieuw, of neem direct contact op via info@theonlyconstant.nl.",
         back: "Terug",
@@ -173,6 +187,10 @@ const nl: typeof en = {
             success: "Je plan van aanpak is verstuurd. Succes de komende dagen, en als je nog vragen hebt, laat het ons dan weten.",
             error: "Er ging iets mis. Probeer het opnieuw of mail info@theonlyconstant.nl.",
             dismiss: "Sluiten",
+            privacyNotice: {
+                message: "We gaan zorgvuldig om met je gegevens. Zie onze",
+                privacyLabel: "privacyverklaring",
+            },
         },
     },
 };
