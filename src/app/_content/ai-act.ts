@@ -114,6 +114,11 @@ const en = {
         },
         consentText:
             "I agree that The Only Constant uses my details to contact me about this outcome and related services. You can unsubscribe at any time.",
+        privacyNotice: {
+            message:
+                "We handle your details with care. We store your answers to the check together with the outcome. See our",
+            privacyLabel: "privacy statement",
+        },
         submit: "Send",
         submitting: "Sending…",
         success: {
@@ -267,6 +272,11 @@ const nl: typeof en = {
         },
         consentText:
             "Ik ga ermee akkoord dat The Only Constant mijn gegevens gebruikt om contact op te nemen over deze uitkomst en gerelateerde dienstverlening. Afmelden kan altijd.",
+        privacyNotice: {
+            message:
+                "We gaan zorgvuldig om met je gegevens. Je antwoorden op de check bewaren we samen met de uitkomst. Zie onze",
+            privacyLabel: "privacyverklaring",
+        },
         submit: "Verstuur",
         submitting: "Versturen…",
         success: {

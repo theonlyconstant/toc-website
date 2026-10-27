@@ -7,6 +7,7 @@ import { sendToolMessage } from "@/lib/tools/api";
 import { ToolSessionLimitError } from "@/lib/tools/types";
 import { ToolChatMessage } from "./ToolChatMessage";
 import { ToolContactForm } from "./ToolContactForm";
+import { PrivacyNotice } from "@/components/consent/PrivacyNotice";
 import { useLocale } from "@/lib/i18n/useLocale";
 import { LocalizedLink as Link } from "@/components/i18n/LocalizedLink";
 import { trackEvent } from "@/lib/analytics/ga";
@@ -213,7 +214,7 @@ export function ToolChat({ endpoints, analytics, content }: ToolChatProps) {
                     </button>
                 </div>
             ) : (
-                <div className="border-t border-border px-4 py-3">
+                <div className="border-t border-border px-4 py-3 flex flex-col gap-2">
                     <form onSubmit={handleSubmit} className="flex gap-2 items-end">
                         <textarea
                             ref={textareaRef}
@@ -239,6 +240,7 @@ export function ToolChat({ endpoints, analytics, content }: ToolChatProps) {
                             </svg>
                         </button>
                     </form>
+                    <PrivacyNotice content={content.privacyNotice} />
                 </div>
             )}
         </div>

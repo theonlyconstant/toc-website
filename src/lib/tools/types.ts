@@ -6,6 +6,8 @@
  * definition of that contract.
  */
 
+import type { PrivacyNoticeContent } from "@/components/consent/PrivacyNotice";
+
 export interface ToolMessage {
     id: string;
     role: "user" | "assistant";
@@ -73,12 +75,16 @@ export interface ToolContactContent {
     success: string;
     error: string;
     dismiss: string;
+    /** Under the form: how we handle the details left here. */
+    privacyNotice: PrivacyNoticeContent;
 }
 
 export interface ToolChatContent {
     emptyTitle: string;
     emptyDescription: string;
     placeholder: string;
+    /** Under the input: what is typed is stored. Always visible while typing. */
+    privacyNotice: PrivacyNoticeContent;
     send: string;
     back: string;
     errorMessage: string;
