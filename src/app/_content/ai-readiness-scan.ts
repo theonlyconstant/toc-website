@@ -79,6 +79,11 @@ const en = {
         emptyDescription:
             "What kind of organization, how many people, and what you want from AI. The scan asks the rest.",
         placeholder: "What kind of organization are you, and what do you want from AI?",
+        privacyNotice: {
+            message:
+                "What you type here is stored so we can send you the result. Don't share confidential business information or other people's data.",
+            privacyLabel: "Privacy statement",
+        },
         send: "Send",
         back: "Back",
         errorMessage:
@@ -102,6 +107,10 @@ const en = {
                 "Your plan of action has been sent. Good luck the coming weeks, and let us know if you have any questions.",
             error: "Something went wrong. Try again or email info@theonlyconstant.nl directly.",
             dismiss: "Dismiss",
+            privacyNotice: {
+                message: "We handle your details with care. See our",
+                privacyLabel: "privacy statement",
+            },
         },
     },
 };
@@ -167,6 +176,11 @@ const nl: typeof en = {
         emptyDescription:
             "Wat voor organisatie, hoeveel mensen, en wat je met AI wilt. De rest vraagt de scan.",
         placeholder: "Wat voor organisatie zijn jullie, en wat wil je met AI?",
+        privacyNotice: {
+            message:
+                "Wat je hier typt slaan we op om je het resultaat te kunnen sturen. Deel geen vertrouwelijke bedrijfsinformatie of gegevens van anderen.",
+            privacyLabel: "Privacyverklaring",
+        },
         send: "Verstuur",
         back: "Terug",
         errorMessage:
@@ -190,6 +204,10 @@ const nl: typeof en = {
                 "Je plan van aanpak is verstuurd. Succes de komende weken, en laat het weten als je vragen hebt.",
             error: "Er ging iets mis. Probeer het opnieuw of mail direct naar info@theonlyconstant.nl.",
             dismiss: "Sluiten",
+            privacyNotice: {
+                message: "We gaan zorgvuldig om met je gegevens. Zie onze",
+                privacyLabel: "privacyverklaring",
+            },
         },
     },
 };

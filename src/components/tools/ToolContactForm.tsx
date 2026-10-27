@@ -7,6 +7,7 @@ import { typography } from "@/design-system/tokens/typography";
 import { submitToolContact } from "@/lib/tools/api";
 import { trackEvent } from "@/lib/analytics/ga";
 import { useLocale } from "@/lib/i18n/useLocale";
+import { PrivacyNotice } from "@/components/consent/PrivacyNotice";
 import type {
     ToolAnalytics,
     ToolContactContent,
@@ -135,6 +136,7 @@ export function ToolContactForm({
                     )}
                 />
             </div>
+            <PrivacyNotice content={content.privacyNotice} />
             {status === "sending" && (
                 <p className={cn(typography.variants.body.sm, "text-muted-foreground")}>
                     {content.sendingHint}
