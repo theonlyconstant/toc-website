@@ -73,7 +73,7 @@ const en = {
         placeholder: "What's going on with AI in your organisation?",
         privacyNotice: {
             message:
-                "What you type here is stored so we can send you the result. Don't share confidential business information or other people's data.",
+                "What you type here is stored so we can give you the result. Don't share confidential business information or other people's data.",
             privacyLabel: "Privacy statement",
         },
         send: "Send",
@@ -164,7 +164,7 @@ const nl: typeof en = {
         placeholder: "Wat speelt er met AI in je organisatie?",
         privacyNotice: {
             message:
-                "Wat je hier typt slaan we op om je het resultaat te kunnen sturen. Deel geen vertrouwelijke bedrijfsinformatie of gegevens van anderen.",
+                "Wat je hier typt slaan we op om je het resultaat te kunnen geven. Deel geen vertrouwelijke bedrijfsinformatie of gegevens van anderen.",
             privacyLabel: "Privacyverklaring",
         },
         send: "Verstuur",
