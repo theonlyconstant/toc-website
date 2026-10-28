@@ -240,7 +240,11 @@ export function ToolChat({ endpoints, analytics, content }: ToolChatProps) {
                             </svg>
                         </button>
                     </form>
-                    <PrivacyNotice content={content.privacyNotice} />
+                    {/* On mobile the contact form brings its own notice; two leave little room for the chat */}
+                    <PrivacyNotice
+                        content={content.privacyNotice}
+                        className={cn(formVisible && "hidden sm:block")}
+                    />
                 </div>
             )}
         </div>
