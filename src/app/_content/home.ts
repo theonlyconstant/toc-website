@@ -58,14 +58,19 @@ const en = {
     clients: {
         eyebrow: "Clients",
         items: [
+            { src: "/images/clients/air_miles_logo.png", name: "Air Miles" },
             { src: "/images/clients/akzo_logo.png", name: "AkzoNobel" },
+            { src: "/images/clients/da_logo.png", name: "DA Drogist" },
             { src: "/images/clients/eon_drive_logo.png", name: "E.ON Drive" },
             { src: "/images/clients/eneco_logo.png", name: "Eneco" },
+            { src: "/images/clients/gs_staalwerken_logo.png", name: "GS Staalwerken" },
+            { src: "/images/clients/inretail_logo.png", name: "INretail" },
             { src: "/images/clients/intersport_logo.png", name: "Intersport" },
             { src: "/images/clients/landal_logo.svg", name: "Landal GreenParks" },
             { src: "/images/clients/ministerie_logo.png", name: "Ministerie van Justitie en Veiligheid" },
+            { src: "/images/clients/puq_logo.png", name: "PUQ" },
             { src: "/images/clients/randstad_logo.png", name: "Randstad" },
-            { src: "/images/clients/reama_logo.png", name: "ReumaNederland" },
+            { src: "/images/clients/reuma_logo.png", name: "ReumaNederland" },
         ],
     },
     insights: {
@@ -133,14 +138,19 @@ const nl: typeof en = {
     clients: {
         eyebrow: "Klanten",
         items: [
+            { src: "/images/clients/air_miles_logo.png", name: "Air Miles" },
             { src: "/images/clients/akzo_logo.png", name: "AkzoNobel" },
+            { src: "/images/clients/da_logo.png", name: "DA Drogist" },
             { src: "/images/clients/eon_drive_logo.png", name: "E.ON Drive" },
             { src: "/images/clients/eneco_logo.png", name: "Eneco" },
+            { src: "/images/clients/gs_staalwerken_logo.png", name: "GS Staalwerken" },
+            { src: "/images/clients/inretail_logo.png", name: "INretail" },
             { src: "/images/clients/intersport_logo.png", name: "Intersport" },
             { src: "/images/clients/landal_logo.svg", name: "Landal GreenParks" },
             { src: "/images/clients/ministerie_logo.png", name: "Ministerie van Justitie en Veiligheid" },
+            { src: "/images/clients/puq_logo.png", name: "PUQ" },
             { src: "/images/clients/randstad_logo.png", name: "Randstad" },
-            { src: "/images/clients/reama_logo.png", name: "ReumaNederland" },
+            { src: "/images/clients/reuma_logo.png", name: "ReumaNederland" },
         ],
     },
     insights: {
