@@ -8,7 +8,8 @@ import { cn } from "@/lib/utils";
 import { SmoothScrollAnchor } from "@/components/utils/SmoothScrollAnchor";
 import { colors } from "@/design-system/tokens/colors";
 import { StructuredData } from "@/components/seo/StructuredData";
-import { i18n } from "@/lib/i18n/config";
+import { notFound } from "next/navigation";
+import { i18n, isLocale } from "@/lib/i18n/config";
 import { getLocalePathPairs } from "@/lib/i18n/localePaths";
 import { LocalePathsProvider } from "@/lib/i18n/LocalePathsProvider";
 import { ORGANIZATION_ID, SITE_URL } from "@/lib/site";
@@ -51,6 +52,11 @@ export default async function LangLayout({
   params: Promise<{ lang: string }>;
 }>) {
   const { lang } = await params;
+
+  // The middleware skips any path with a dot in it as a static file, so an
+  // unknown one (/wp-login.php, /.env) lands here with that name as `lang`.
+  // Without this it served the homepage as a 200, canonical to itself.
+  if (!isLocale(lang)) notFound();
 
   return (
     <html lang={lang} suppressHydrationWarning>
