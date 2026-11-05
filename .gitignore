@@ -43,3 +43,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 website input documents/
+
+# written by `next dev` (Next.js agent rules); CLAUDE.md is the project guide
+AGENTS.md
