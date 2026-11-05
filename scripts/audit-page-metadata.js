@@ -41,7 +41,9 @@ const PATH_TABLES = [
 
 /** Routes with no canonical, and why that is correct. */
 const NO_CANONICAL = new Set([
-    // (none today — add with a reason, not to silence the audit)
+    // Only calls notFound(). A 404 must not name a canonical, and the sitemap
+    // skips dynamic routes, so this one is never advertised.
+    '/[...missing]',
 ]);
 
 // -- COLLECT --
