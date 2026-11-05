@@ -47,10 +47,24 @@ function routeOf(file) {
     return rel === "" ? "/" : "/" + rel.split(path.sep).join("/");
 }
 
+const NOT_FOUND = path.join(LANG_DIR, "not-found.tsx");
+
+/**
+ * A page that renders nothing and only calls notFound() (the [...missing]
+ * catch-all) shows not-found.tsx in its place, so that file is what has to
+ * end on the footer.
+ */
+function onlyCallsNotFound(src) {
+    return /\bnotFound\(\)/.test(src) && !/<[A-Za-z]/.test(src);
+}
+
 /** page.tsx often only composes a *Page component; follow one hop into it. */
 function rendersFooter(file) {
     const src = fs.readFileSync(file, "utf8");
     if (src.includes(MODULE)) return true;
+    if (onlyCallsNotFound(src)) {
+        return fs.existsSync(NOT_FOUND) && rendersFooter(NOT_FOUND);
+    }
 
     for (const match of src.matchAll(/<([A-Z][A-Za-z0-9]*Page)\b/g)) {
         const component = match[1];
