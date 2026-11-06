@@ -17,8 +17,8 @@ const en = {
                     description: "What can generative AI do for your role and sector? After this session you'll know, and you'll be ready to start. No prior knowledge needed.",
                 },
                 {
-                    title: "CUSTOM GPTS",
-                    description: "For teams already using ChatGPT. You'll learn to build Custom GPTs that fit your workflows and are ready to deploy immediately.",
+                    title: "PLUGINS",
+                    description: "For teams already using ChatGPT. You'll learn to build plugins that fit your workflows and are ready to deploy immediately.",
                 },
                 {
                     title: "AI FOR VISUAL CONTENT",
@@ -81,7 +81,7 @@ const en = {
                 quote: "Finally an AI workshop that uses our own data and challenges. I went home with knowledge I applied the very next day."
             },
             {
-                quote: "In four hours I went from ChatGPT beginner to a working Custom GPT that saves our team ten hours a week. The hands-on approach made the difference."
+                quote: "In four hours I went from ChatGPT beginner to a working plugin that saves our team ten hours a week. The hands-on approach made the difference."
             },
             {
                 quote: "A lot, and sometimes overwhelming, but I learned more in one afternoon about how to actually work differently."
@@ -107,8 +107,8 @@ const nl: typeof en = {
                     description: "Wat kan generatieve AI voor jouw rol en sector betekenen? Na deze sessie weet je het en kun je direct van start. Geen voorkennis nodig.",
                 },
                 {
-                    title: "CUSTOM GPTS",
-                    description: "Voor teams die ChatGPT al gebruiken. Je leert Custom GPTs bouwen die passen bij je werkprocessen en direct inzetbaar zijn.",
+                    title: "PLUGINS",
+                    description: "Voor teams die ChatGPT al gebruiken. Je leert plugins bouwen die passen bij je werkprocessen en direct inzetbaar zijn.",
                 },
                 {
                     title: "AI VOOR VISUELE CONTENT",
@@ -171,7 +171,7 @@ const nl: typeof en = {
                 quote: "Eindelijk een AI-workshop die onze eigen data en uitdagingen gebruikt. Ik ging naar huis met kennis die ik de volgende dag al toepaste."
             },
             {
-                quote: "In vier uur ging ik van ChatGPT-beginner naar een werkende Custom GPT die ons team tien uur per week bespaart. De hands-on aanpak maakte het verschil."
+                quote: "In vier uur ging ik van ChatGPT-beginner naar een werkende plugin die ons team tien uur per week bespaart. De hands-on aanpak maakte het verschil."
             },
             {
                 quote: "Veel en soms overweldigend, maar ik leerde meer in een middag hoe ik echt anders kan gaan werken"
