@@ -78,7 +78,8 @@ export function FormSplitSection({
                                             <a
                                                 href={`mailto:${person.email}`}
                                                 className={cn(
-                                                    "text-muted-foreground underline underline-offset-4 decoration-transparent hover:decoration-current hover:text-foreground transition-colors duration-200", /* lint:allowed - matches ContactDetailsModule link */
+                                                    "text-muted-foreground hover:text-foreground",
+                                                    typography.underlineReveal,
                                                     typography.variants.body.md,
                                                 )}
                                             >

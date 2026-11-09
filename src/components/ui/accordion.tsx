@@ -5,6 +5,7 @@ import * as AccordionPrimitive from "@radix-ui/react-accordion"
 import { ChevronDownIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { typography } from "@/design-system/tokens/typography"
 
 function Accordion({
   ...props
@@ -35,7 +36,11 @@ function AccordionTrigger({
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          "focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180", /* lint:allowed - shadcn default */
+          "focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180", /* lint:allowed - shadcn default */
+          // Site hover pattern (same as blog and question rows) instead of shadcn's plain hover:underline.
+          typography.underlineReveal,
+          // Tailwind v4 no longer gives <button> a pointer cursor; same contract as Button.
+          "cursor-pointer",
           className
         )}
         {...props}

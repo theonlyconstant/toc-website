@@ -55,7 +55,7 @@ export function BlogGridSection({ posts, lang }: BlogGridSectionProps) {
                         <Heading
                             level={3}
                             size="card"
-                            className="underline underline-offset-4 decoration-transparent group-hover:decoration-current transition-colors duration-200"
+                            className={typography.underlineRevealGroup}
                         >
                             {post.title}
                         </Heading>

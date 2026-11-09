@@ -35,7 +35,7 @@ export function EducateFaqModule() {
                                 <AccordionTrigger
                                     className={cn(
                                         typography.variants.heading.card,
-                                        "text-left hover:no-underline py-4" /* lint:allowed - accordion trigger padding */
+                                        "text-left py-4" /* lint:allowed - accordion trigger padding */
                                     )}
                                 >
                                     {item.question}

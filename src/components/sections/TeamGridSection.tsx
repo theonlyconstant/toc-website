@@ -76,7 +76,7 @@ export function TeamGridSection({
                             <div className={cn("mt-auto flex flex-col gap-2 pt-2 border-t border-border/40", typography.variants.body.sm) /* lint:allowed - internal card geometry */}>
                                 <a
                                     href={`mailto:${member.email}`}
-                                    className="underline underline-offset-4 decoration-transparent hover:decoration-current transition-colors duration-200"
+                                    className={typography.underlineReveal}
                                 >
                                     {member.email}
                                 </a>
@@ -84,7 +84,7 @@ export function TeamGridSection({
                                     href={member.linkedinUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={cn(typography.variants.body.sm, "underline underline-offset-4 decoration-transparent hover:decoration-current transition-colors duration-200")}
+                                    className={cn(typography.variants.body.sm, typography.underlineReveal)}
                                 >
                                     LinkedIn
                                 </a>
