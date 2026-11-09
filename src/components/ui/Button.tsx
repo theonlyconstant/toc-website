@@ -31,7 +31,10 @@ const buttonVariants = cva(
         default: cn("h-9 px-4 py-2 has-[>svg]:px-3", typography.variants.ui.button.md),
         sm: cn("h-8 rounded-surface gap-1.5 px-3 has-[>svg]:px-2.5", typography.variants.ui.button.sm),
         lg: cn("h-10 rounded-surface px-6 has-[>svg]:px-4", typography.variants.ui.button.lg),
-        xl: cn("h-14 rounded-full px-8", typography.variants.ui.button.lg), // Hero CTA size
+        // Hero CTA size. min-h (not h) + py + wrapping: a label too long for the
+        // available width wraps inside the pill instead of overflowing its container;
+        // single-line labels keep the 56px height.
+        xl: cn("min-h-14 h-auto max-w-full py-3 rounded-full px-8 whitespace-normal text-center", typography.variants.ui.button.lg),
         icon: "size-9",
         "icon-sm": "size-8",
         "icon-lg": "size-10",
