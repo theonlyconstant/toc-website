@@ -88,7 +88,12 @@
   --instrument-input-fg: #0A0A0A;
   --instrument-input-placeholder: rgba(10, 10, 10, 0.5);
   --instrument-input-border: var(--border);
-  --instrument-input-ring: var(--ring);
+  /* Two-sided focus outline (WCAG 1.4.11 on every tone):
+     inner edge = field ink, contrasts with the always-white field;
+     outer ring = tone foreground, contrasts with the surface around the field.
+     --instrument-input-ring is re-declared per tone so it resolves to that tone's foreground. */
+  --instrument-input-border-focus: var(--instrument-input-fg);
+  --instrument-input-ring: var(--foreground);
   --instrument-input-border-error: var(--destructive);
   --instrument-input-ring-error: var(--destructive);
 }
@@ -130,6 +135,7 @@
     --instrument-input-placeholder: #737373;
     /* neutral-500 */
     --instrument-input-border: var(--border);
+    --instrument-input-ring: var(--foreground);
 
     /* Surface Layer */
     --surface-background: #fafafa;
@@ -166,6 +172,7 @@
     --instrument-input-fg: #0A0A0A;
     --instrument-input-placeholder: #737373;
     --instrument-input-border: var(--border);
+    --instrument-input-ring: var(--foreground);
 
     /* Surface Layer (Contrast Hardening) */
     --surface-background: #0a0a0a;
@@ -205,6 +212,7 @@
     --instrument-input-fg: theme('colors.neutral.950');
     --instrument-input-placeholder: theme('colors.neutral.500');
     --instrument-input-border: theme('colors.neutral.200');
+    --instrument-input-ring: var(--foreground);
   }
 }
 
