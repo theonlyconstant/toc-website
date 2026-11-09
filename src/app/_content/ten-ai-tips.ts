@@ -100,7 +100,7 @@ export const tenAiTipsContent: Record<Locale, TenAiTipsContent> = {
             cta: { label: "Neem contact op", href: "/contact" },
             secondaryAction: {
                 prefix: "of",
-                label: "Mail maarten@theonlyconstant.nl",
+                label: "Mail Maarten",
                 href: "mailto:maarten@theonlyconstant.nl",
             },
             panelTitle: "Benieuwd wat AI voor jouw bedrijf kan betekenen?",
@@ -179,7 +179,7 @@ export const tenAiTipsContent: Record<Locale, TenAiTipsContent> = {
             cta: { label: "Get in touch", href: "/contact" },
             secondaryAction: {
                 prefix: "or",
-                label: "Email maarten@theonlyconstant.nl",
+                label: "Email Maarten",
                 href: "mailto:maarten@theonlyconstant.nl",
             },
             panelTitle: "Curious what AI could mean for your business?",
