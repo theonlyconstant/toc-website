@@ -47,15 +47,15 @@ export function EditorialCardGridSection({
                                 <Surface
                                     key={idx}
                                     variant="catalog"
-                                    cardHeight="standard"
+                                    cardHeight="auto"
                                     className="flex flex-col gap-3 p-6 md:p-8 h-full"
                                 >
-                                    <Heading level={3} size="card" className="text-primary-foreground">
+                                    <Heading level={3} size="card">
                                         {item.title}
                                     </Heading>
                                     <Text
                                         as={typeof item.description === 'string' ? 'p' : 'div'}
-                                        className={cn("text-primary-foreground/60 max-w-prose", typography.variants.body.md)}
+                                        className={cn("opacity-90 max-w-prose", typography.variants.body.md)}
                                     >
                                         {item.description}
                                     </Text>

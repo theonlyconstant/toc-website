@@ -43,8 +43,9 @@ All existing card components are mapped as follows. This mapping is **LOCKED**.
 | `CapabilityCard` | **NavigationCard** | `standard` | Aligns bottom CTAs in capability grids. |
 | `WorkflowCard` | **NavigationCard** | `standard` | Aligns bottom CTAs in hero follower rows. |
 | `TrainingCategorySection` | **NavigationCard** | `tall` | Heavy content requires taller baseline for CTA alignment. |
-| `EditorialCardGridSection` | **ContentCard** | `standard` | Ensures clean visual rhythm for text-heavy grids. |
-| `FeatureGridSection` | **ContentCard** | `standard` | Aligns mixed media (icon vs text) items. |
+| `EditorialCardGridSection` | **ContentCard** | `auto` | Short title + description, no CTA to align; content-driven height matches `CatalogGridSection`. |
+| `FeatureGridSection` (index layout, `id` + CTA) | **ContentCard** | `standard` | Aligns the bottom CTA across a row. |
+| `FeatureGridSection` (icon layout) | **ContentCard** | `auto` | Icon + short title/description, no CTA to align; content-driven height. |
 | `TestimonialsSection` | **ContentCard** | `standard` | Normalizes varying quote lengths. |
 | `CatalogGridSection` | **UtilityCard** | `auto` | List-like data requires natural flow; no artificial height. |
 | `ContactDetailsModule` | **UtilityCard** | `auto` | Address/Legal blocks are informational, not rhythmic. |

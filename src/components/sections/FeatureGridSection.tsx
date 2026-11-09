@@ -47,7 +47,8 @@ export function FeatureGridSection({
                 const content = (
                     <Surface
                         variant="card"
-                        cardHeight="standard"
+                        // Index layout carries a bottom CTA that needs row alignment; icon layout is content-driven.
+                        cardHeight={item.id ? "standard" : "auto"}
                         className={cn(
                             "relative flex flex-col p-6 md:p-8 h-full transition-all duration-300 ease-out",
                             // If wrapped in Link (href exists), the Link has "group". 
