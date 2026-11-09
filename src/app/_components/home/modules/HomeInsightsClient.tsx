@@ -97,7 +97,7 @@ function FeaturedPost({ post, lang, newBadge }: { post: BlogPostMeta; lang: stri
             </div>
 
             <Link href={`/blog/${post.slug}`} className="group">
-                <Heading level={3} size="page" className="underline underline-offset-4 decoration-transparent group-hover:decoration-current transition-colors duration-200">
+                <Heading level={3} size="page" className={typography.underlineRevealGroup}>
                     {post.title}
                 </Heading>
             </Link>
@@ -128,7 +128,7 @@ function CompactPost({ post, lang, newBadge }: { post: BlogPostMeta; lang: strin
             </div>
 
             <Link href={`/blog/${post.slug}`} className="group">
-                <Heading level={3} size="lg" className="underline underline-offset-4 decoration-transparent group-hover:decoration-current transition-colors duration-200">
+                <Heading level={3} size="lg" className={typography.underlineRevealGroup}>
                     {post.title}
                 </Heading>
             </Link>

@@ -78,7 +78,7 @@ export function BlogLatestSection({ posts, showBottomBorder }: BlogLatestSection
                         href={`/blog/${post.slug}`}
                         className="group block"
                     >
-                        <Heading level={2} size="lg" className="underline underline-offset-4 decoration-transparent group-hover:decoration-current transition-colors duration-200">
+                        <Heading level={2} size="lg" className={typography.underlineRevealGroup}>
                             {post.title}
                         </Heading>
                     </Link>

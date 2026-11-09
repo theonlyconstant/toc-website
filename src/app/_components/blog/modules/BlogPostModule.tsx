@@ -144,7 +144,7 @@ export function BlogPostModule({ post, latestPosts }: BlogPostModuleProps) {
                                     <span
                                         className={cn(
                                             typography.variants.body.md,
-                                            "underline underline-offset-4 decoration-transparent group-hover:decoration-current transition-colors duration-200 line-clamp-2"
+                                            typography.underlineRevealGroup, "line-clamp-2"
                                         )}
                                     >
                                         {latest.title}

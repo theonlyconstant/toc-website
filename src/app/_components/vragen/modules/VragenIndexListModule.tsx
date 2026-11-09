@@ -53,7 +53,7 @@ export function VragenIndexListModule({ lang }: VragenIndexListModuleProps) {
                                     <Heading
                                         level={2}
                                         size="prompt"
-                                        className="underline underline-offset-4 decoration-transparent group-hover:decoration-current transition-colors duration-200"
+                                        className={typography.underlineRevealGroup}
                                     >
                                         {page.question}
                                     </Heading>
