@@ -40,7 +40,7 @@ export function WorkflowCard({
                         {icon}
                     </div>
 
-                    <Heading level={3} size="sm" className="underline underline-offset-4 decoration-transparent group-hover:decoration-current transition-colors duration-200">
+                    <Heading level={3} size="sm" className={typography.underlineRevealGroup}>
                         {title}
                     </Heading>
 

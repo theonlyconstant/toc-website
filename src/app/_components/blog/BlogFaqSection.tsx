@@ -27,7 +27,7 @@ export function BlogFaqSection({ title, items }: BlogFaqSectionProps) {
                         <AccordionTrigger
                             className={cn(
                                 typography.variants.body.md,
-                                "text-left hover:no-underline py-4 cursor-pointer" /* lint:allowed - accordion trigger padding */
+                                "text-left py-4" /* lint:allowed - accordion trigger padding */
                             )}
                         >
                             {item.question}

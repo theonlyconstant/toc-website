@@ -150,6 +150,18 @@ export const typography = {
      * only one of the two sides carries the font's ascent.
      */
     capTrim: "cap-trim",
+
+    /**
+     * The site's hover affordance for text that is (or sits inside) a link or
+     * control: an underline that is always laid out but transparent, and takes
+     * the text colour on hover. Laid out up front so nothing shifts when it
+     * appears. Used by blog and question rows, so FAQ triggers follow it too.
+     *
+     * - underlineReveal: the text itself is the hover target.
+     * - underlineRevealGroup: a wrapping `group` (a whole clickable row) is.
+     */
+    underlineReveal: "underline underline-offset-4 decoration-transparent hover:decoration-current transition-colors duration-200",
+    underlineRevealGroup: "underline underline-offset-4 decoration-transparent group-hover:decoration-current transition-colors duration-200",
 } as const;
 
 export type TypographyRole =

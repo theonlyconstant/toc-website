@@ -95,7 +95,7 @@ export function PillarPage({ slug, posts }: PillarPageProps) {
                                 </time>
                             </div>
                             <Link href={`/blog/${post.slug}`} className="group">
-                                <Heading level={3} size="lg" className="underline underline-offset-4 decoration-transparent group-hover:decoration-current transition-colors duration-200">
+                                <Heading level={3} size="lg" className={typography.underlineRevealGroup}>
                                     {post.title}
                                 </Heading>
                             </Link>
