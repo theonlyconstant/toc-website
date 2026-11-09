@@ -45,7 +45,7 @@ export const scales = {
         buttonMd: "text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm 2xl:text-sm",
         buttonSm: "text-xs sm:text-xs md:text-xs lg:text-xs xl:text-xs 2xl:text-xs",
         navLink: "text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm 2xl:text-sm",
-        input: "text-base sm:text-base md:text-sm lg:text-sm xl:text-sm 2xl:text-sm",
+        input: "text-base sm:text-base md:text-base lg:text-base xl:text-base 2xl:text-base",
         placeholder: "text-lg sm:text-lg md:text-lg lg:text-lg xl:text-lg 2xl:text-lg",
     }
 } as const;
