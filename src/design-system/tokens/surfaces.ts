@@ -8,7 +8,9 @@ export const surfaces = {
         "bg-[var(--surface-card)] rounded-surface border border-border shadow-surface hover:shadow-lg transition-shadow",
     catalog:
         // NOTE: intentionally fixed white surface (brand/marketing). If theme inversion is required, migrate to bg-background.
-        "bg-white text-primary-foreground rounded-surface shadow-surface h-full flex flex-col",
+        // tone-light scopes the tokens inside to the white it always paints, so nested tone-aware
+        // content (muted fills, consent placeholders, buttons) stays correct inside a dark module.
+        "tone-light bg-white text-primary-foreground rounded-surface shadow-surface h-full flex flex-col",
     // Clean media surface without border
     mediaFrameless: "bg-[var(--surface-media)] rounded-surface border-none shadow-surface",
 

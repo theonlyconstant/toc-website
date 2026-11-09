@@ -36,7 +36,7 @@ export function ContactDetailsModule() {
     const cards = contactContent[lang].details.cards as readonly AddressCard[];
 
     return (
-        <HomeModule id="contact-details" width="full" tone="light" pad="m" gap="none">
+        <HomeModule id="contact-details" width="full" tone="dark" pad="m" gap="none">
             <div className="container mx-auto">
                 <div className={cn("flex flex-col", spacing.component.sectionHeader)}>
                     <SectionHeader

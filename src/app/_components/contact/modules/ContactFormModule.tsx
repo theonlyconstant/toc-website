@@ -7,7 +7,7 @@ import { FormField } from "@/components/ui/form-field";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/Button";
-import { SectionHeader } from "@/components/sections/SectionHeader";
+import { FormSplitSection } from "@/components/sections/FormSplitSection";
 import { Heading, Text } from "@/design-system/components/Typography";
 import { spacing } from "@/design-system/tokens/spacing";
 import { typography } from "@/design-system/tokens/typography";
@@ -16,11 +16,20 @@ import { submitContactForm } from "@/actions/contact";
 import { contactSchema } from "@/lib/validation/contact";
 import { trackEvent } from "@/lib/analytics/ga";
 import { contactContent } from "@/app/_content/contact";
+import { aboutContent } from "@/app/_content/about";
 import { useLocale } from "@/lib/i18n/useLocale";
 
 export function ContactFormModule() {
     const lang = useLocale();
     const content = contactContent[lang].form;
+    // Founders are single-sourced from the About content.
+    const { team } = aboutContent[lang];
+    const people = team.members.map((member) => ({
+        name: member.name,
+        email: member.email,
+        imageSrc: member.imageSrc,
+        imageAlt: member.imageAlt,
+    }));
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [fieldErrors, setFieldErrors] = useState<{ [key: string]: string[] | undefined }>({});
@@ -77,12 +86,15 @@ export function ContactFormModule() {
             id="contact-form"
             width="full"
             tone="light"
-            pad="m"
-            padBottom="none" // Flush for Seam Ownership (Next module has divider)
+            pad="m" // Keeps its bottom step: the dark details module below is a colour edge
             gap="none"
         >
-            {isSubmitted ? (
-                <div className="max-w-2xl mx-auto w-full">
+            <FormSplitSection
+                eyebrow={content.eyebrow}
+                title={content.title}
+                people={people}
+            >
+                {isSubmitted ? (
                     <FormPanel className={cn("items-center text-center", spacing.component.formSuccessPanel)}>
                         <Heading level={3}>{content.success.title}</Heading>
                         <Text className="text-muted-foreground my-4"> {/* lint:allowed */}
@@ -96,92 +108,81 @@ export function ContactFormModule() {
                             {content.success.resetLabel}
                         </Button>
                     </FormPanel>
-                </div>
-            ) : (
-                <div className="container mx-auto w-full">
-                    <div className={spacing.stackXl}>
-                        <SectionHeader
-                            eyebrow={content.eyebrow}
-                            description={content.description}
-                            variant="split"
-                            divider
-                        />
+                ) : (
+                    <FormPanel>
+                        {formError && (
+                            <div className={cn("bg-destructive/10 text-destructive p-4 rounded-panel", typography.variants.body.sm)}>
+                                {formError}
+                            </div>
+                        )}
 
-                        <FormPanel>
-                            {formError && (
-                                <div className={cn("bg-destructive/10 text-destructive p-4 rounded-panel", typography.variants.body.sm)}>
-                                    {formError}
-                                </div>
-                            )}
+                        <form onSubmit={handleSubmit} className={spacing.stackLg}>
+                            {/* Honeypot - Hidden from users */}
+                            <input
+                                type="text"
+                                name="_gotcha"
+                                tabIndex={-1}
+                                className="hidden"
+                                autoComplete="off"
+                            />
 
-                            <form onSubmit={handleSubmit} className={spacing.stackLg}>
-                                {/* Honeypot - Hidden from users */}
-                                <input
-                                    type="text"
-                                    name="_gotcha"
-                                    tabIndex={-1}
-                                    className="hidden"
-                                    autoComplete="off"
-                                />
-
-                                <div className="grid md:grid-cols-2 gap-6">
-                                    <FormField
-                                        label={content.fields.name.label}
-                                        error={fieldErrors.name?.[0]}
-                                    >
-                                        <Input
-                                            name="name"
-                                            placeholder={content.fields.name.placeholder}
-                                            required
-                                            disabled={isLoading}
-                                            aria-invalid={!!fieldErrors.name}
-                                        />
-                                    </FormField>
-
-                                    <FormField
-                                        label={content.fields.email.label}
-                                        error={fieldErrors.email?.[0]}
-                                    >
-                                        <Input
-                                            name="email"
-                                            type="email"
-                                            placeholder={content.fields.email.placeholder}
-                                            required
-                                            disabled={isLoading}
-                                            aria-invalid={!!fieldErrors.email}
-                                        />
-                                    </FormField>
-                                </div>
-
+                            <div className="grid md:grid-cols-2 gap-6">
                                 <FormField
-                                    label={content.fields.message.label}
-                                    error={fieldErrors.message?.[0]}
+                                    label={content.fields.name.label}
+                                    error={fieldErrors.name?.[0]}
                                 >
-                                    <Textarea
-                                        name="message"
-                                        placeholder={content.fields.message.placeholder}
+                                    <Input
+                                        name="name"
+                                        placeholder={content.fields.name.placeholder}
                                         required
                                         disabled={isLoading}
-                                        className="min-h-[160px]"
-                                        aria-invalid={!!fieldErrors.message}
+                                        aria-invalid={!!fieldErrors.name}
                                     />
                                 </FormField>
 
-                                <div className={cn("flex justify-end", spacing.component.formActions)}>
-                                    <Button
-                                        type="submit"
-                                        size="xl"
+                                <FormField
+                                    label={content.fields.email.label}
+                                    error={fieldErrors.email?.[0]}
+                                >
+                                    <Input
+                                        name="email"
+                                        type="email"
+                                        placeholder={content.fields.email.placeholder}
+                                        required
                                         disabled={isLoading}
-                                        className={cn("w-full md:w-auto", typography.variants.ui.button.lg)}
-                                    >
-                                        {isLoading ? content.submit.loading : content.submit.label}
-                                    </Button>
-                                </div>
-                            </form>
-                        </FormPanel>
-                    </div>
-                </div>
-            )}
+                                        aria-invalid={!!fieldErrors.email}
+                                    />
+                                </FormField>
+                            </div>
+
+                            <FormField
+                                label={content.fields.message.label}
+                                error={fieldErrors.message?.[0]}
+                            >
+                                <Textarea
+                                    name="message"
+                                    placeholder={content.fields.message.placeholder}
+                                    required
+                                    disabled={isLoading}
+                                    className="min-h-[160px]"
+                                    aria-invalid={!!fieldErrors.message}
+                                />
+                            </FormField>
+
+                            <div className={cn("flex justify-end", spacing.component.formActions)}>
+                                <Button
+                                    type="submit"
+                                    size="xl"
+                                    disabled={isLoading}
+                                    className={cn("w-full md:w-auto", typography.variants.ui.button.lg)}
+                                >
+                                    {isLoading ? content.submit.loading : content.submit.label}
+                                </Button>
+                            </div>
+                        </form>
+                    </FormPanel>
+                )}
+            </FormSplitSection>
         </HomeModule>
     );
 }

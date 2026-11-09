@@ -64,11 +64,16 @@ export function FooterCtaSection({
                             </h2>
 
                             <div className="flex flex-col gap-3 items-start">
-                                <div className="flex items-center gap-3">
+                                <div className="flex items-center gap-3 max-w-full">
                                     <Button
                                         asChild
                                         size="xl"
-                                        className="tone-dark bg-background text-foreground hover:bg-background/80 rounded-full"
+                                        className={cn(
+                                            "tone-dark bg-background text-foreground hover:bg-background/80 rounded-full",
+                                            // A long label wraps inside the pill instead of pushing out of the band at phone width.
+                                            // Single-line labels keep the xl height (min-h-14).
+                                            "max-w-full h-auto min-h-14 py-3 whitespace-normal text-center",
+                                        )}
                                         onClick={() =>
                                             trackEvent("cta_click", {
                                                 cta_label: cta.label,
