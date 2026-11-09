@@ -1,0 +1,46 @@
+# Gemaakt met bin/security-week --dependabot (mannetje1970/second-brain). Beleid: security/beleid.json.
+# Elke maandag: één PR met alle patches en minors (na groene Vercel-preview mergen), een aparte
+# PR met majors (gepland werk, mag blijven staan) en beveiligingsfixes gebundeld zodra ze er zijn.
+# Geen auto-merge. Geen 'ignore' voor majors: dat kan beveiligingsfixes blokkeren.
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directories: ["/"]
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Europe/Amsterdam"
+    open-pull-requests-limit: 5
+    groups:
+      beveiliging:
+        applies-to: security-updates
+        patterns: ["*"]
+      wekelijks:
+        applies-to: version-updates
+        update-types: ["minor", "patch"]
+        patterns: ["*"]
+      majors:
+        applies-to: version-updates
+        update-types: ["major"]
+        patterns: ["*"]
+  - package-ecosystem: "github-actions"
+    directories: ["/"]
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Europe/Amsterdam"
+    open-pull-requests-limit: 5
+    groups:
+      beveiliging:
+        applies-to: security-updates
+        patterns: ["*"]
+      wekelijks:
+        applies-to: version-updates
+        update-types: ["minor", "patch"]
+        patterns: ["*"]
+      majors:
+        applies-to: version-updates
+        update-types: ["major"]
+        patterns: ["*"]
