@@ -65,7 +65,7 @@ Pages may only obtain layout or styling effects via these wrappers:
 
 ### 3.2 Form Contracts
 Forms must be built using specific primitives to enforce layout and consistency.
-*   **`FormPanel`**: Wrapper for full form column. Enforces `stackXl`, `shadow-panel`, `rounded-panel`.
+*   **`FormPanel`**: Wrapper for full form column. Enforces `stackXl`, `shadow-panel`, `rounded-surface` (large container, SCALES_CANON radius Tier 2). Controls inside use `rounded-panel` (Tier 1) and carry no shadow of their own.
 *   **`FormSection`**: Semantic grouping of inputs. Enforces internal `stackMd` and Header/Description layout.
 *   **`FormField`**: Wraps label, description, and control. Enforces input spacing and accessibility.
 

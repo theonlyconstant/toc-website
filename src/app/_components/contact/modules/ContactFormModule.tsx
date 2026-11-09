@@ -170,7 +170,7 @@ export function ContactFormModule() {
                                 <div className={cn("flex justify-end", spacing.component.formActions)}>
                                     <Button
                                         type="submit"
-                                        size="lg"
+                                        size="xl"
                                         disabled={isLoading}
                                         className={cn("w-full md:w-auto", typography.variants.ui.button.lg)}
                                     >
