@@ -10,6 +10,7 @@ export const layoutTokens = {
     splitHero: "grid gap-8 md:gap-12 md:grid-cols-[minmax(0,0.6fr)_minmax(0,0.4fr)] items-start", // Responsive Hero Ramp (Stack < MD, Split >= MD)
     splitAsymmetric: "grid gap-8 md:grid-cols-[1fr_2fr] items-start", // 1/3 - 2/3 Split for Team/Sidebar layouts
     capabilityHeroGrid: "grid gap-8 md:gap-12 md:grid-cols-2 items-start", // 50/50 Split for Capability Heroes to allow text flow
+    splitForm: "grid grid-cols-1 gap-6 md:gap-8 lg:gap-12 lg:grid-cols-[minmax(0,0.4fr)_minmax(0,0.6fr)] items-start", // Narrative 40 / form 60 (the splitGolden proportion, ~golden ratio). Stacks below lg so two-up fields keep their width.
 
     /**
      * A cluster of short link lists that has to stay a cluster.

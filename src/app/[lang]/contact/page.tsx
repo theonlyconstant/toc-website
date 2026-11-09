@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ContactPage } from "@/app/_components/contact/ContactPage";
 import { buildAlternates } from "@/lib/i18n/alternates";
 import { SITE_URL } from "@/lib/site";
+import type { Locale } from "@/lib/i18n/config";
 
 interface PageProps {
     params: Promise<{ lang: string }>;
@@ -30,6 +31,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
 }
 
-export default function Page() {
-    return <ContactPage />;
+export default async function Page({ params }: PageProps) {
+    const { lang } = await params;
+    return <ContactPage lang={lang as Locale} />;
 }

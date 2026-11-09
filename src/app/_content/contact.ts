@@ -1,19 +1,27 @@
 import type { Locale } from "@/lib/i18n/config";
+import type { FooterCtaContent } from "@/app/_content/footer";
 
 const en = {
     hero: {
         title: "CONTACT",
     },
+    // Page-specific closing band: the site-wide one asks you to get in touch, which you already are.
+    footerCta: {
+        title: ["AI AMBITIONS,", "NO CONCRETE", "PLAN YET?"],
+        cta: { label: "BOOK AN AI OPPORTUNITY SCAN", href: "/ai-opportunity-scan" },
+        panelTitle: "",
+        panelBody: "With the AI Opportunity Scan we explore where AI can add value to your organisation and where you can start.",
+    } satisfies FooterCtaContent,
     form: {
         eyebrow: "GET IN TOUCH",
-        description: "Fill in the form and we'll get back to you shortly.",
+        title: "How can we help you?",
         fields: {
-            name: { label: "Name", placeholder: "Jane Doe" },
-            email: { label: "Email", placeholder: "jane@example.com", error: "Please enter a valid email address." },
-            message: { label: "Message", placeholder: "Tell us about your project..." },
+            name: { label: "Name", placeholder: "Your name" },
+            email: { label: "Email", placeholder: "Your email address", error: "Please enter a valid email address." },
+            message: { label: "Message", placeholder: "What do you want to work on?" },
         },
         submit: {
-            label: "SEND MESSAGE",
+            label: "Send message",
             loading: "SENDING...",
         },
         success: {
@@ -65,16 +73,22 @@ const nl: typeof en = {
     hero: {
         title: "CONTACT",
     },
+    footerCta: {
+        title: ["WEL AI-AMBITIES,", "NOG GEEN", "CONCREET PLAN?"],
+        cta: { label: "PLAN EEN AI OPPORTUNITY SCAN", href: "/ai-opportunity-scan" },
+        panelTitle: "",
+        panelBody: "Met de AI Opportunity Scan onderzoeken we waar AI waarde kan toevoegen aan jouw organisatie en waar je kunt beginnen.",
+    },
     form: {
         eyebrow: "NEEM CONTACT OP",
-        description: "Vul het formulier in en we nemen snel contact met je op.",
+        title: "Waar kunnen we je bij helpen?",
         fields: {
-            name: { label: "Naam", placeholder: "Jan Jansen" },
-            email: { label: "E-mail", placeholder: "jan@voorbeeld.nl", error: "Vul een geldig e-mailadres in." },
-            message: { label: "Bericht", placeholder: "Vertel ons over je project..." },
+            name: { label: "Naam", placeholder: "Je naam" },
+            email: { label: "E-mail", placeholder: "Je e-mailadres", error: "Vul een geldig e-mailadres in." },
+            message: { label: "Bericht", placeholder: "Waar wil je mee aan de slag?" },
         },
         submit: {
-            label: "VERSTUUR BERICHT",
+            label: "Verstuur bericht",
             loading: "VERZENDEN...",
         },
         success: {
