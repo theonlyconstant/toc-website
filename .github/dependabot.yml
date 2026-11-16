@@ -12,6 +12,18 @@ updates:
       time: "06:00"
       timezone: "Europe/Amsterdam"
     open-pull-requests-limit: 5
+    # Uitzondering op "geen ignore voor majors" (Jaap, 16-11-2026). TypeScript 7 en eslint 10
+    # breken de lint: typescript-eslint ondersteunt TS < 6.1 en de plugins in eslint-config-next
+    # (react, import, jsx-a11y) gaan tot eslint 9. @types/node volgt de Node-versie van de server (24).
+    # Weghalen zodra die pakketten TS 7 en eslint 10 ondersteunen. Een ignore houdt ook
+    # beveiligingsfixes voor deze versies tegen; /security-week scant de lock daar los van.
+    ignore:
+      - dependency-name: "typescript"
+        versions: [">=7"]
+      - dependency-name: "eslint"
+        versions: [">=10"]
+      - dependency-name: "@types/node"
+        versions: [">=25"]
     groups:
       beveiliging:
         applies-to: security-updates
