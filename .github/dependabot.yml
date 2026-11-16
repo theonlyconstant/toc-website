@@ -12,6 +12,10 @@ updates:
       time: "06:00"
       timezone: "Europe/Amsterdam"
     open-pull-requests-limit: 5
+    # Nieuwe versies eerst 7 dagen laten rijpen, gelijk aan de pakket-quarantaine (Jaap, 16-11-2026).
+    # Geldt alleen voor gewone versie-updates; beveiligingsupdates komen meteen.
+    cooldown:
+      default-days: 7
     # Uitzondering op "geen ignore voor majors" (Jaap, 16-11-2026). TypeScript 7 en eslint 10
     # breken de lint: typescript-eslint ondersteunt TS < 6.1 en de plugins in eslint-config-next
     # (react, import, jsx-a11y) gaan tot eslint 9. @types/node volgt de Node-versie van de server (24).
@@ -44,6 +48,10 @@ updates:
       time: "06:00"
       timezone: "Europe/Amsterdam"
     open-pull-requests-limit: 5
+    # Nieuwe versies eerst 7 dagen laten rijpen, gelijk aan de pakket-quarantaine (Jaap, 16-11-2026).
+    # Geldt alleen voor gewone versie-updates; beveiligingsupdates komen meteen.
+    cooldown:
+      default-days: 7
     groups:
       beveiliging:
         applies-to: security-updates
