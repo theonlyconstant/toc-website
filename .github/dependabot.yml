@@ -1,0 +1,58 @@
+# Gemaakt met bin/security-week --dependabot (mannetje1970/second-brain). Beleid: security/beleid.json.
+# Elke maandag: één PR met alle patches en minors (na groene Vercel-preview mergen), een aparte
+# PR met majors (gepland werk, mag blijven staan) en beveiligingsfixes gebundeld zodra ze er zijn.
+# Geen auto-merge. Geen 'ignore' voor majors: dat kan beveiligingsfixes blokkeren.
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directories: ["/"]
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Europe/Amsterdam"
+    open-pull-requests-limit: 5
+    # Uitzondering op "geen ignore voor majors" (Jaap, 16-11-2026). TypeScript 7 en eslint 10
+    # breken de lint: typescript-eslint ondersteunt TS < 6.1 en de plugins in eslint-config-next
+    # (react, import, jsx-a11y) gaan tot eslint 9. @types/node volgt de Node-versie van de server (24).
+    # Weghalen zodra die pakketten TS 7 en eslint 10 ondersteunen. Een ignore houdt ook
+    # beveiligingsfixes voor deze versies tegen; /security-week scant de lock daar los van.
+    ignore:
+      - dependency-name: "typescript"
+        versions: [">=7"]
+      - dependency-name: "eslint"
+        versions: [">=10"]
+      - dependency-name: "@types/node"
+        versions: [">=25"]
+    groups:
+      beveiliging:
+        applies-to: security-updates
+        patterns: ["*"]
+      wekelijks:
+        applies-to: version-updates
+        update-types: ["minor", "patch"]
+        patterns: ["*"]
+      majors:
+        applies-to: version-updates
+        update-types: ["major"]
+        patterns: ["*"]
+  - package-ecosystem: "github-actions"
+    directories: ["/"]
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Europe/Amsterdam"
+    open-pull-requests-limit: 5
+    groups:
+      beveiliging:
+        applies-to: security-updates
+        patterns: ["*"]
+      wekelijks:
+        applies-to: version-updates
+        update-types: ["minor", "patch"]
+        patterns: ["*"]
+      majors:
+        applies-to: version-updates
+        update-types: ["major"]
+        patterns: ["*"]
