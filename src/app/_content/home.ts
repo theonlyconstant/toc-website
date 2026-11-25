@@ -73,6 +73,24 @@ const en = {
             { src: "/images/clients/reuma_logo.svg", name: "ReumaNederland" },
         ],
     },
+    video: {
+        eyebrow: "As seen on De AI Storm",
+        title: "AI makes a bad process faster, not better",
+        description: "Julien and Jaap tell Dutch programme De AI Storm why real change starts with employees and customers, not with technology. Two minutes, in Dutch with English subtitles.",
+        credit: {
+            label: "Watch on YouTube",
+            href: "https://youtu.be/mcevqbFz5a0",
+        },
+        src: "/videos/ai-storm/ai-storm.mp4",
+        poster: "/images/home/ai-storm-poster.jpg",
+        posterAlt: "A workshop by The Only Constant, with the card set laid out on the table",
+        playLabel: "Watch the video",
+        duration: "1:57",
+        tracks: [
+            { src: "/videos/ai-storm/ai-storm.en.vtt", srcLang: "en", label: "English", default: true },
+            { src: "/videos/ai-storm/ai-storm.nl.vtt", srcLang: "nl", label: "Nederlands", default: false },
+        ],
+    },
     insights: {
         eyebrow: "Latest Insights",
         newBadge: "New",
@@ -151,6 +169,24 @@ const nl: typeof en = {
             { src: "/images/clients/puq_logo.svg", name: "PUQ" },
             { src: "/images/clients/randstad_logo.svg", name: "Randstad" },
             { src: "/images/clients/reuma_logo.svg", name: "ReumaNederland" },
+        ],
+    },
+    video: {
+        eyebrow: "Gezien bij De AI Storm",
+        title: "AI maakt een slecht proces sneller, niet beter",
+        description: "Julien en Jaap vertellen in De AI Storm waarom echte verandering begint bij medewerkers en klanten, en niet bij de technologie. In twee minuten.",
+        credit: {
+            label: "Bekijk op YouTube",
+            href: "https://youtu.be/mcevqbFz5a0",
+        },
+        src: "/videos/ai-storm/ai-storm.mp4",
+        poster: "/images/home/ai-storm-poster.jpg",
+        posterAlt: "Een workshop van The Only Constant, met de kaartenset uitgelegd op tafel",
+        playLabel: "Bekijk de video",
+        duration: "1:57",
+        tracks: [
+            { src: "/videos/ai-storm/ai-storm.nl.vtt", srcLang: "nl", label: "Nederlands", default: false },
+            { src: "/videos/ai-storm/ai-storm.en.vtt", srcLang: "en", label: "English", default: false },
         ],
     },
     insights: {
