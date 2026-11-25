@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/i18n/config";
 import { HomeHeroModule } from "./modules/HomeHeroModule";
 import { HomeServicesModule } from "./modules/HomeServicesModule";
 import { HomeClientsModule } from "./modules/HomeClientsModule";
+import { HomeVideoModule } from "./modules/HomeVideoModule";
 import { HomeAboutModule } from "./modules/HomeAboutModule";
 import { HomeInsightsModule } from "./modules/HomeInsightsModule";
 import { SiteFooterModule } from "@/app/_components/footer/SiteFooterModule";
@@ -18,6 +19,7 @@ export function HomePage({ lang }: HomePageProps) {
             <HomeHeroModule />
             <HomeServicesModule />
             <HomeClientsModule />
+            <HomeVideoModule />
             <HomeInsightsModule lang={lang} />
             <HomeAboutModule />
             {/* The about module above is dark too, so there is no edge to split
