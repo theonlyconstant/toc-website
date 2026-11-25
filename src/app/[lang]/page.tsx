@@ -3,7 +3,8 @@ import { HomePage } from "@/app/_components/home/HomePage";
 import { StructuredData } from "@/components/seo/StructuredData";
 import type { Locale } from "@/lib/i18n/config";
 import { buildAlternates } from "@/lib/i18n/alternates";
-import { ORGANIZATION_ID, SITE_URL } from "@/lib/site";
+import { ORGANIZATION_ID, SITE_URL, siteUrl } from "@/lib/site";
+import { homeContent } from "@/app/_content/home";
 
 interface HomePageProps {
     params: Promise<{ lang: string }>;
@@ -34,6 +35,7 @@ export async function generateMetadata({ params }: HomePageProps): Promise<Metad
 
 export default async function Home({ params }: HomePageProps) {
     const { lang } = await params;
+    const { video } = homeContent[lang as Locale];
     return (
         <>
             <StructuredData
@@ -51,6 +53,20 @@ export default async function Home({ params }: HomePageProps) {
                         "AI Automatisering",
                         "AI Proof of Concept",
                     ],
+                }}
+            />
+            <StructuredData
+                data={{
+                    "@context": "https://schema.org",
+                    "@type": "VideoObject",
+                    name: video.title,
+                    description: video.description,
+                    thumbnailUrl: siteUrl(video.poster),
+                    contentUrl: siteUrl(video.src),
+                    uploadDate: "2026-11-12T08:31:01-08:00",
+                    duration: "PT1M57S",
+                    inLanguage: "nl",
+                    publisher: { "@id": ORGANIZATION_ID },
                 }}
             />
             <HomePage lang={lang as Locale} />
